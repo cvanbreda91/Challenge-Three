@@ -1,2 +1,1 @@
-# Challenge-Three
-Password Generator
+# Password Generator Starter Code
