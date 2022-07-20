@@ -1,5 +1,8 @@
 // Assignment code here
-function generatePassword(length=20) {
+var lengthText = window.prompt('How many characters does your password need to be (8-120)?');
+lengthInt = parseInt(lengthText);
+
+function generatePassword(length=lengthInt) {
   
   if ((document.getElementById('UpperCase').checked) && (document.getElementById('Number').checked) && (document.getElementById('Character').checked)){
     let password = '';
