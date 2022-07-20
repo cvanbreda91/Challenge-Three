@@ -1,5 +1,4 @@
 // Assignment code here
-
 function generatePassword(length=20) {
   
   if ((document.getElementById('UpperCase').checked) && (document.getElementById('Number').checked) && (document.getElementById('Character').checked)){
@@ -15,11 +14,8 @@ function generatePassword(length=20) {
     for (let i = 0; i < passwordLength; i++) {
       password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
     }
-   
-    const msg = `Your new password is: "${password}"`
-    console.log(msg);
     return password;}
-  
+   
 else if ((document.getElementById('UpperCase').checked) && (document.getElementById('Number').checked)){
     let password = '';
     let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789abcdefghijklmnopqrstuvwxyz";
@@ -34,8 +30,7 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
       password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
     }
    
-    const msg = `Your new password is: "${password}"`
-    console.log(msg);
+
     return password;}
     else if ((document.getElementById('UpperCase').checked) && (document.getElementById('Character').checked)){
       let password = '';
@@ -50,9 +45,6 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
       for (let i = 0; i < passwordLength; i++) {
         password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
       }
-     
-      const msg = `Your new password is: "${password}"`
-      console.log(msg);
       return password;}
       else if ((document.getElementById('Number').checked) && (document.getElementById('Character').checked)){
         let password = '';
@@ -66,11 +58,7 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
        
         for (let i = 0; i < passwordLength; i++) {
           password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
-        }
-       
-        const msg = `Your new password is: "${password}"`
-        console.log(msg);
-        return password;}
+        }return password;}
   else if (document.getElementById('Number').checked){
     let password = '';
     let chars = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -83,11 +71,9 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
    
     for (let i = 0; i < passwordLength; i++) {
       password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
-    }
+    }return password;}
    
-    const msg = `Your new password is: "${password}"`
-    console.log(msg);
-    return password;}
+
     else if (document.getElementById('Character').checked){
       let password = '';
       let chars = "!@#$%^&*()abcdefghijklmnopqrstuvwxyz";
@@ -101,10 +87,9 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
       for (let i = 0; i < passwordLength; i++) {
         password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
       }
+      return password;
      
-      const msg = `Your new password is: "${password}"`
-      console.log(msg);
-      return password;}
+      }
       else if (document.getElementById('UpperCase').checked){
         let password = '';
         let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -119,8 +104,6 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
           password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
         }
        
-        const msg = `Your new password is: "${password}"`
-        console.log(msg);
         return password;}
   else {
     let password = '';
@@ -135,10 +118,8 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
     for (let i = 0; i < passwordLength; i++) {
       password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
     }
-   
-    const msg = `Your new password is: "${password}"`
-    console.log(msg);
-    return password;}
+    return password;
+  }
 
   }
   
