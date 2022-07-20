@@ -2,11 +2,16 @@
 var lengthText = window.prompt('How many characters does your password need to be (8-120)?');
 lengthInt = parseInt(lengthText);
 
+lowerCaseArray=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+upperCaseArray=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+numberArray=["1","2","3","4","5","6","7","8","9","0"]
+characterArray=["!","@","#","$","%"]
+
 function generatePassword(length=lengthInt) {
   
   if ((document.getElementById('UpperCase').checked) && (document.getElementById('Number').checked) && (document.getElementById('Character').checked)){
     let password = '';
-    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%^&*()abcdefghijklmnopqrstuvwxyz";
+    let chars = [].concat(lowerCaseArray,upperCaseArray,numberArray,characterArray)
     let passwordLength = length;
    
     let array = [];
@@ -21,7 +26,7 @@ function generatePassword(length=lengthInt) {
    
 else if ((document.getElementById('UpperCase').checked) && (document.getElementById('Number').checked)){
     let password = '';
-    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789abcdefghijklmnopqrstuvwxyz";
+    let chars = [].concat(lowerCaseArray,upperCaseArray,numberArray)
     let passwordLength = length;
    
     let array = [];
@@ -37,7 +42,7 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
     return password;}
     else if ((document.getElementById('UpperCase').checked) && (document.getElementById('Character').checked)){
       let password = '';
-      let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^^&*()abcdefghijklmnopqrstuvwxyz";
+      let chars = [].concat(lowerCaseArray,upperCaseArray,characterArray)
       let passwordLength = length;
      
       let array = [];
@@ -51,7 +56,7 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
       return password;}
       else if ((document.getElementById('Number').checked) && (document.getElementById('Character').checked)){
         let password = '';
-        let chars = "1234567890!@#$%^^&*()abcdefghijklmnopqrstuvwxyz";
+        let chars = [].concat(lowerCaseArray,numberArray,characterArray)
         let passwordLength = length;
        
         let array = [];
@@ -64,7 +69,7 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
         }return password;}
   else if (document.getElementById('Number').checked){
     let password = '';
-    let chars = "0123456789abcdefghijklmnopqrstuvwxyz";
+    let chars = [].concat(lowerCaseArray,numberArray)
     let passwordLength = length;
    
     let array = [];
@@ -79,7 +84,7 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
 
     else if (document.getElementById('Character').checked){
       let password = '';
-      let chars = "!@#$%^&*()abcdefghijklmnopqrstuvwxyz";
+      let chars = [].concat(lowerCaseArray,characterArray)
       let passwordLength = length;
      
       let array = [];
@@ -95,7 +100,7 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
       }
       else if (document.getElementById('UpperCase').checked){
         let password = '';
-        let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        let chars = [].concat(lowerCaseArray,upperCaseArray)
         let passwordLength = length;
        
         let array = [];
@@ -110,7 +115,7 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
         return password;}
   else {
     let password = '';
-    let chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()";
+    let chars = [].concat(lowerCaseArray,upperCaseArray,numberArray,characterArray)
     let passwordLength = length;
    
     let array = [];
