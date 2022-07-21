@@ -41,4 +41,4 @@ Made with ❤️ by Courtney
 - if/elseif/else statements
 
 ## Website Snapshot
-! [website image](https://github.com/cvanbreda91/Password-Generator/blob/main/assets/images/website%20image.jpg)
+! [website-image]
