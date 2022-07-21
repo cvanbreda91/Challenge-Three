@@ -1,26 +1,29 @@
-// Assignment code here
+//Get user input for how long their password should be and convert the string to a numnber
   var lengthText = window.prompt('How many characters does your password need to be (8-120)?');
   var lengthInt = Number(lengthText);
   
-
+//Validate that the user has input a number and it is within range
   function validateLengthInt () {
-    while (lengthInt <= 8 || lengthInt >=120 || lengthInt == ""|| lengthInt === null)
+    while (lengthInt <= 8 || lengthInt >=120)
       {
       lengthText = window.prompt('Invalid Response: How many characters does your password need to be (8-120)?');
       // use retu]rn to call it again and stop the rest of this function from running
       lengthInt = Number(lengthText);
-      }}
+      }
+    }
   
-
+//Call validateLengthInt function
 validateLengthInt()
 
+//Define arrays for different combinations of characters for passwords based on user input
 lowerCaseArray=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 upperCaseArray=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 numberArray=["1","2","3","4","5","6","7","8","9","0"]
 characterArray=["!","@","#","$","%"]
 
+//create function for generation of password
 function generatePassword(length=lengthInt) {
-  
+//create different scenarios based on what user can select, including multiple options chosen using if, elseif, else statement
   if ((document.getElementById('UpperCase').checked) && (document.getElementById('Number').checked) && (document.getElementById('Character').checked)){
     let password = '';
     let chars = [].concat(lowerCaseArray,upperCaseArray,numberArray,characterArray)
@@ -28,57 +31,64 @@ function generatePassword(length=lengthInt) {
    
     let array = [];
     for (let i=0; i<length; i++){
-      array.push(Math.floor(Math.random() * chars.length)); // Random index values corresponding to the character set are pushed to array
+    // Random index values corresponding to the character set are pushed to array
+      array.push(Math.floor(Math.random() * chars.length)); 
     }
-   
+    //let the function iterate through random characters in the array
     for (let i = 0; i < passwordLength; i++) {
-      password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
+      password += chars[array[i]]; 
     }
+
     return password;}
    
-else if ((document.getElementById('UpperCase').checked) && (document.getElementById('Number').checked)){
+  else if ((document.getElementById('UpperCase').checked) && (document.getElementById('Number').checked)){
     let password = '';
     let chars = [].concat(lowerCaseArray,upperCaseArray,numberArray)
     let passwordLength = length;
    
     let array = [];
     for (let i=0; i<length; i++){
-      array.push(Math.floor(Math.random() * chars.length)); // Random index values corresponding to the character set are pushed to array
+      array.push(Math.floor(Math.random() * chars.length)); 
     }
    
     for (let i = 0; i < passwordLength; i++) {
-      password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
+      password += chars[array[i]];
     }
-   
 
     return password;}
-    else if ((document.getElementById('UpperCase').checked) && (document.getElementById('Character').checked)){
-      let password = '';
-      let chars = [].concat(lowerCaseArray,upperCaseArray,characterArray)
-      let passwordLength = length;
+
+  else if ((document.getElementById('UpperCase').checked) && (document.getElementById('Character').checked)){
+    let password = '';
+    let chars = [].concat(lowerCaseArray,upperCaseArray,characterArray)
+    let passwordLength = length;
      
-      let array = [];
-      for (let i=0; i<length; i++){
-        array.push(Math.floor(Math.random() * chars.length)); // Random index values corresponding to the character set are pushed to array
+    let array = [];
+    for (let i=0; i<length; i++){
+      array.push(Math.floor(Math.random() * chars.length)); 
       }
      
-      for (let i = 0; i < passwordLength; i++) {
-        password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
+    for (let i = 0; i < passwordLength; i++) {
+        password += chars[array[i]];
       }
+
       return password;}
-      else if ((document.getElementById('Number').checked) && (document.getElementById('Character').checked)){
-        let password = '';
-        let chars = [].concat(lowerCaseArray,numberArray,characterArray)
-        let passwordLength = length;
-       
-        let array = [];
-        for (let i=0; i<length; i++){
-          array.push(Math.floor(Math.random() * chars.length)); // Random index values corresponding to the character set are pushed to array
+
+  else if ((document.getElementById('Number').checked) && (document.getElementById('Character').checked)){
+    let password = '';
+    let chars = [].concat(lowerCaseArray,numberArray,characterArray)
+    let passwordLength = length;
+
+    let array = [];
+    for (let i=0; i<length; i++){
+        array.push(Math.floor(Math.random() * chars.length)); 
         }
        
-        for (let i = 0; i < passwordLength; i++) {
-          password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
-        }return password;}
+    for (let i = 0; i < passwordLength; i++) {
+        password += chars[array[i]]; 
+        }
+
+    return password;}
+
   else if (document.getElementById('Number').checked){
     let password = '';
     let chars = [].concat(lowerCaseArray,numberArray)
@@ -86,45 +96,47 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
    
     let array = [];
     for (let i=0; i<length; i++){
-      array.push(Math.floor(Math.random() * chars.length)); // Random index values corresponding to the character set are pushed to array
+      array.push(Math.floor(Math.random() * chars.length)); 
     }
    
     for (let i = 0; i < passwordLength; i++) {
-      password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
-    }return password;}
-   
+      password += chars[array[i]]; 
+    }
 
-    else if (document.getElementById('Character').checked){
-      let password = '';
-      let chars = [].concat(lowerCaseArray,characterArray)
-      let passwordLength = length;
+    return password;}
+   
+  else if (document.getElementById('Character').checked){
+    let password = '';
+    let chars = [].concat(lowerCaseArray,characterArray)
+    let passwordLength = length;
      
-      let array = [];
-      for (let i=0; i<length; i++){
-        array.push(Math.floor(Math.random() * chars.length)); // Random index values corresponding to the character set are pushed to array
+    let array = [];
+    for (let i=0; i<length; i++){
+      array.push(Math.floor(Math.random() * chars.length)); 
       }
      
-      for (let i = 0; i < passwordLength; i++) {
-        password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
+    for (let i = 0; i < passwordLength; i++) {
+      password += chars[array[i]]; 
       }
-      return password;
-     
-      }
-      else if (document.getElementById('UpperCase').checked){
-        let password = '';
-        let chars = [].concat(lowerCaseArray,upperCaseArray)
-        let passwordLength = length;
+      
+      return password;}
+
+  else if (document.getElementById('UpperCase').checked){
+    let password = '';
+    let chars = [].concat(lowerCaseArray,upperCaseArray)
+    let passwordLength = length;
        
-        let array = [];
-        for (let i=0; i<length; i++){
-          array.push(Math.floor(Math.random() * chars.length)); // Random index values corresponding to the character set are pushed to array
+    let array = [];
+    for (let i=0; i<length; i++){
+      array.push(Math.floor(Math.random() * chars.length)); 
         }
        
-        for (let i = 0; i < passwordLength; i++) {
-          password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
+    for (let i = 0; i < passwordLength; i++) {
+      password += chars[array[i]]; 
         }
        
-        return password;}
+    return password;}
+
   else {
     let password = '';
     let chars = [].concat(lowerCaseArray,upperCaseArray,numberArray,characterArray)
@@ -132,24 +144,24 @@ else if ((document.getElementById('UpperCase').checked) && (document.getElementB
    
     let array = [];
     for (let i=0; i<length; i++){
-      array.push(Math.floor(Math.random() * chars.length)); // Random index values corresponding to the character set are pushed to array
+      array.push(Math.floor(Math.random() * chars.length)); 
     }
    
     for (let i = 0; i < passwordLength; i++) {
-      password += chars[array[i]]; // No division-remainder operator now necessary (values already correspond to indexes of chars)
+      password += chars[array[i]]; 
     }
+
     return password;
   }
-
   }
   
-   
-  generatePassword();
+//Call generatePassword function 
+generatePassword();
 
 //Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-//Write password to the #password input
+//Write password to the #password input using new function
 function writePassword() {
 var password = generatePassword();
 var passwordText = document.querySelector("#password");
