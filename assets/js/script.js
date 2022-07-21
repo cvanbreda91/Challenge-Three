@@ -43,7 +43,7 @@ function generatePassword(length=lengthInt) {
 
     else if ((document.getElementById('LowerCase').checked) && (document.getElementById('UpperCase').checked)&&(document.getElementById('Character').checked)){
       let password = '';
-      let chars = [].concat(lowerCaseArray,numberArray,characterArray)
+      let chars = [].concat(lowerCaseArray,upperCaseArray,characterArray)
       let passwordLength = length;
      
       let array = [];
