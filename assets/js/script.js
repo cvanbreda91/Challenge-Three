@@ -1,6 +1,18 @@
 // Assignment code here
-var lengthText = window.prompt('How many characters does your password need to be (8-120)?');
-lengthInt = parseInt(lengthText);
+  var lengthText = window.prompt('How many characters does your password need to be (8-120)?');
+  var lengthInt = Number(lengthText);
+  
+
+  function validateLengthInt () {
+    while (lengthInt <= 8 || lengthInt >=120 || lengthInt == ""|| lengthInt === null)
+      {
+      lengthText = window.prompt('Invalid Response: How many characters does your password need to be (8-120)?');
+      // use retu]rn to call it again and stop the rest of this function from running
+      lengthInt = Number(lengthText);
+      }}
+  
+
+validateLengthInt()
 
 lowerCaseArray=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 upperCaseArray=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
