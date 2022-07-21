@@ -1,5 +1,5 @@
-### Password Generator
-# Challenge Three
+# Password Generator
+### Challenge Three
 
 ## Assignment
 - GIVEN I need a new, secure password
