@@ -41,4 +41,4 @@ Made with ❤️ by Courtney
 - if/elseif/else statements
 
 ## Website Snapshot
-! [website-image]
+![website-image]
